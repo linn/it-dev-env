@@ -13,3 +13,11 @@ services:
             - "5432:5432"
         volumes:
             - /var/lib/postgresql/data
+    oracle:
+        image: wnameless/oracle-xe-11g
+        ports:
+            - "1521:1521"
+        volumes:
+            - /u01/app/oracle/oradata
+            - /u01/app/oracle/admin
+            - /u01/app/oracle/fast_recovery_area
