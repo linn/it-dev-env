@@ -2,10 +2,10 @@ version: '2'
 services:
     rabbitmq:
         image: rabbitmq:3.6-management
-        ports: 
+        ports:
             - "5672:5672"
             - "15672:15672"
-        volumes: 
+        volumes:
             - /var/lib/rabbitmq
     postgres:
         image: postgres:9.6-alpine
@@ -21,3 +21,9 @@ services:
             - /u01/app/oracle/oradata
             - /u01/app/oracle/admin
             - /u01/app/oracle/fast_recovery_area
+    mongo:
+      image: mongo:3.4
+      ports:
+          - "27017:27017"
+      volumes:
+          - /var/lib/mongodb
