@@ -27,3 +27,12 @@ services:
           - "27017:27017"
       volumes:
           - /var/lib/mongodb
+
+    haproxy:
+      image: haproxy:1.7
+      network_mode: "host"
+      volumes:
+          - /c/projects/proxies/localhost/etc/haproxy:/usr/local/etc/haproxy/
+
+
+
