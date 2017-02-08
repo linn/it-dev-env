@@ -30,9 +30,12 @@ services:
 
     haproxy:
       image: haproxy:1.7
-      network_mode: "host"
+      ports:
+          - "80:80"
       volumes:
           - /c/projects/proxies/localhost/etc/haproxy:/usr/local/etc/haproxy/
+      environment: 
+          - COMPUTERNAME
 
 
 
