@@ -7,12 +7,14 @@ services:
             - "15672:15672"
         volumes:
             - /var/lib/rabbitmq
+        restart: unless-stopped
     postgres:
         image: postgres:9.6-alpine
         ports:
             - "5432:5432"
         volumes:
             - /var/lib/postgresql/data
+        restart: unless-stopped
     oracle:
         image: wnameless/oracle-xe-11g
         ports:
@@ -21,21 +23,22 @@ services:
             - /u01/app/oracle/oradata
             - /u01/app/oracle/admin
             - /u01/app/oracle/fast_recovery_area
+        restart: unless-stopped
     mongo:
-      image: mongo:3.4
-      ports:
-          - "27017:27017"
-      volumes:
-          - /var/lib/mongodb
-
+        image: mongo:3.4
+        ports:
+            - "27017:27017"
+        volumes:
+            - /var/lib/mongodb
+        restart: unless-stopped
     haproxy:
-      image: haproxy:1.7
-      ports:
-          - "1234:1234"
-      volumes:
-          - /c/projects/proxies/localhost/etc/haproxy:/usr/local/etc/haproxy/
-      environment: 
-          - COMPUTERNAME
-
+        image: haproxy:1.7
+        ports:
+            - "1234:1234"
+        volumes:
+            - /c/projects/proxies/localhost/etc/haproxy:/usr/local/etc/haproxy/
+        environment: 
+            - COMPUTERNAME
+        restart: unless-stopped
 
 
