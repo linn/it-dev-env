@@ -9,7 +9,7 @@ services:
             - /var/lib/rabbitmq
         restart: unless-stopped
     postgres:
-        image: postgres:9.6-alpine
+        image: postgres:13.1-alpine
         ports:
             - "5432:5432"
         volumes:
