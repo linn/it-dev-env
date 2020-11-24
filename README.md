@@ -20,6 +20,9 @@ This is a repo to hold files required when developing against any of the Linn IT
 
 
 you may want to add 
+```
         environment:
-            POSTGRES_PASSWORD: makeyourownpasswordhere
+            POSTGRES_PASSWORD: addyourownpasswordhere
+```
 to the end of the postgres section to set a default password
+
