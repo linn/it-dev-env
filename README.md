@@ -24,5 +24,5 @@ you may want to add
         environment:
             POSTGRES_PASSWORD: addyourownpasswordhere
 ```
-to the end of the postgres section to set a default password
+to the end of the postgres section of the yml file to set a default password
 
