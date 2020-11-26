@@ -17,3 +17,12 @@ This is a repo to hold files required when developing against any of the Linn IT
 ##Destroying
 
 `docker-compose down` - will stop all the services and destroy all your volumes
+
+
+you may want to add 
+```
+        environment:
+            POSTGRES_PASSWORD: addyourownpasswordhere
+```
+to the end of the postgres section of the yml file to set a default password
+

@@ -9,14 +9,14 @@ services:
             - /var/lib/rabbitmq
         restart: unless-stopped
     postgres:
-        image: postgres:9.6-alpine
+        image: postgres:13.1-alpine
         ports:
             - "5432:5432"
         volumes:
             - /var/lib/postgresql/data
         restart: unless-stopped
     oracle:
-        image: wnameless/oracle-xe-11g
+        image: wnameless/oracle-xe-11g-r2
         ports:
             - "1521:1521"
         volumes:
@@ -25,7 +25,7 @@ services:
             - /u01/app/oracle/fast_recovery_area
         restart: unless-stopped
     mongo:
-        image: mongo:3.4
+        image: mongo:4.4.2
         ports:
             - "27017:27017"
         volumes:
